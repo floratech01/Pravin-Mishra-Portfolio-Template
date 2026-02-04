@@ -40,3 +40,27 @@ Add this line (example):
 ```
 
 ✅ This proof must be visible in your browser screenshot submission.
+
+## Footer Deployment Date (Dynamic Implementation)
+
+The website footer displays the deployment date dynamically to reflect the most recent deployment.
+This was implemented using JavaScript to automatically generate and display the current date when the page loads.
+
+Implementation Details
+
+A placeholder <span> element is added to the footer, and JavaScript injects the current date at runtime.
+<span id="deployDate"></span>
+
+<script>
+  const d = new Date();
+  const formattedDate = d.toISOString().split('T')[0];
+  document.getElementById("deployDate").textContent = formattedDate;
+</script>
+
+## Explanation
+
+The script retrieves the current system date at page load time.
+
+The date is formatted in YYYY-MM-DD format using ISO standards.
+
+This approach ensures the deployment date is always accurate without requiring manual updates during future deployments.
